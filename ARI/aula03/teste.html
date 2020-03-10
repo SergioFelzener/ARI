@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <title>Cadastro</title>
+    <style>
+        body {
+            text-align: center;
+        }
+
+        input,textarea{
+            width: 100%;
+        }
+        .container {
+            width: 500px;
+            margin:0 auto;
+        }
+    </style>
+
+
+
+</head>
+
+
+<body>
+    <main class="container">
+        <h1>Pesquisa de Satisfação</h1>
+        <form>
+            <label for="nome">Navegador preferido</label><br>
+            <input type="text" id="nome" name="nome" pattern="[A-Za-z0-9]+(@sp.senac.br)" placeholder="Jose da Silva" required="require"><br>
+            <label for="email">email</label><br>
+            <input type="email" id="email" name="email" placeholder="email@senac.com.br" required="require"><br><br>
+            <label for="data">Data de Nascimento</label><br>
+            <input type="datetime-local" id="data" name="data" ><br>
+            <label for="pag">Pagina pessoal</label><br>
+            <input type="url" id="pag" name="pag" pattern="[A-Za-z0-9]+[\.](com.br|com)" required="require" placeholder="http://www.teste.com"><br><br><br>
+            <label for="phone">Telefone</label><br>
+            <input type="tel" id="phone" name="phone"  pattern="[0-9]{1}-[0-9]{4}-[0-9]{4}" required="require"><br>
+            <label for="endereço">endereço</label><br>
+            <input type="text" id="end" name="end" required="require"><br><br>
+       
+           
+
+            <div class="row-fluid"> <br>
+                <button class="btn btn-primary enviar">Enviar</button> <br><br>
+                <button class="btn"><a href="pag2.html">Proxima Pag</a></button>
+                
+            </div>
+
+
+        </form>
+    </main>
+
+</body>
+
+</html>
