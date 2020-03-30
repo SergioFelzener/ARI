@@ -1,0 +1,24 @@
+.margemTop {
+    margin-top: 30px;
+
+}
+
+.container {
+    text-align: center;
+    width: auto;
+    height: auto;
+    margin-top: 40px;
+    
+}
+
+footer {
+    background-color: gray;
+    margin-right: 0px;
+    text-align: center;
+
+}
+
+#imageController{
+    width: 130px;
+    height: 130px;
+}
