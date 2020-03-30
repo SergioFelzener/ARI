@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercicios Aula 04</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Exercícios aula 05 -> </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active ml-2"> <a href="hashgame.html">Jogo da Velha</a></li>
+                <li class="nav-item ml-2"> <a href="#">Damas</a></li>
+                <li class="nav-item ml-2"> <a href="#">Xadrez</a></li>
+            </ul>
+        </nav>
+    </header>
+    <header class="container">
+        <h1 id="tituloH1">Exercícios Aula 04</h1>
+    </header>
+    <main>
+        <section class="container">
+            <h2>Video</h2>
+            <div>
+                <video id='video' width="400" controls>
+                    <source src="video/luaoscar.mp4" type="video/mp4">
+                </video>
+                <div>
+                    <!--Usando Inputs com JS em controller .js -->
+                    <input type="button" value="Play" onclick="play()">
+                    <input type="button" value="Pause" onclick="pause()">
+                    <!--Usando button  com JS Aqui -->
+                    <button onclick="document.getElementById('video').volume += 0.1">Vol+ </button>
+                    <button onclick="document.getElementById('video').volume -= 0.1">Vol- </button>
+                    <button onclick="document.getElementById('video').load()">Reload </button>
+                </div>
+            </div>
+
+            <div class="mt-5">
+                <h3 class="mt-2">Audio</h3>
+            </div>
+
+            <audio id='audio' controls preload="none">
+                <source src="audio/HB_SnareSqueeze_85.wav" type="audio/wav">
+            </audio>
+            <div>
+
+                <img id='imageController' src="img/play.png" alt="play" onclick="play_load()">
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer fixed-bottom">
+        <div>
+            <div>
+                <div>
+                    <h6>About</h6>
+                    <p><mark>Exercicíos 04 Play audio e video HTML5 ans JS</mark></p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by
+                        <a href="https://github.com/SergioFelzener/ARI/tree/master/ARI">GitHub Sergio Felzener ARI</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+    <script type="text/javascript" src="js/controller.js"></script>
+</body>
+
+</html>
