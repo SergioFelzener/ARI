@@ -3,8 +3,8 @@ var musica = document.getElementById("audio");
 var controle = document.getElementById("imageController");
 
 function play_load() {
-    controle.setAttribute('src', 'img/load.png');
-    setTimeout(play_music, 1000);
+    controle.setAttribute('src', 'img/load3.gif');
+    setTimeout(play_music, 2000);
 }
 
 function play_music() {
