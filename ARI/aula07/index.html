@@ -1,39 +1,130 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="PT-BR">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=<p >, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Aplicações Ricas para Web</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
+
 <body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: #361A96">
+            <img id="logo" src="img/logo.png">
+            <a class="navbar-brand" href="#">ARI</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Aula 05
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="hashgame.html">Hash Game</a>
+                        <a class="dropdown-item" href="damas.html">Checkers Game</a>
+                        <a class="dropdown-item" href="#">Chess Game</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Aula 06
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="ajax1.html">Ajax Exercício 1</a>
+                        <a class="dropdown-item" href="ajax2.html">Ajax Exercício 2</a>
+                    </div>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Aula 07
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="exe07.html">Exercício Aula 07</a>  
+                    </div>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <header class="container">
+        <h1 id="tituloH1">Aplicações Ricas para WEB</h1>
+    </header>
+    <main>
+        <section class="container" style="margin-bottom: 150px;">
+            <p>Exercício aula 04 Audio & Video</p>
+            <h2>Video</h2>
 
-        <p id="p1" spellcheck="false" contenteditable="true">Paragrafo Editável</p>
+            <div>
+                <video id='video' width="400" controls>
+                    <source src="video/luaoscar.mp4" type="video/mp4">
+                </video>
+                <div>
+                    <!--Usando Inputs com JS em controller .js -->
+                    <input type="button" value="Play" onclick="play()">
+                    <input type="button" value="Pause" onclick="pause()">
+                    <!--Usando button  com JS Aqui -->
+                    <button onclick="document.getElementById('video').volume += 0.1">Vol+ </button>
+                    <button onclick="document.getElementById('video').volume -= 0.1">Vol- </button>
+                    <button onclick="document.getElementById('video').load()">Reload </button>
+                </div>
+            </div>
 
-    <section contenteditable="true">
-        <h1 contenteditable="false">Titulo Editável</h1>
-        <p>paragrafo editável</p>
-        <p>paragrafo editável</p>
+            <div class="mt-5">
+                <h3 class="mt-2">Audio</h3>
+            </div>
 
-    </section>
+            <audio id='audio' controls preload="none">
+                <source src="audio/HB_SnareSqueeze_85.wav" type="audio/wav">
+            </audio>
+            <div>
 
-    <section>
-        <ul> 
-            <p>Li Editáveis<br></p>
-            <li contenteditable ="true">Item 1</li>
-            <li contenteditable ="true">Item 2</li>
-            <li contenteditable ="true">Item 3</li>
-        </ul>
-        <ul contenteditable ="true">
-            <p>UL Editáveis<br></p>
-            <li>Item 1</li>
-            <li>Item 2</li>
-            <li>Item 3</li>
-        </ul>
-    </section>
+                <img id='imageController' src="img/play.png" alt="play" onclick="play_load()">
+
+            </div>
+
+        </section>
+
+    </main>
+
+    <footer class="footer fixed-bottom">
+        <div>
+            <div>
+                <div>
+                    <h6>About</h6>
+                    <p><mark>Exercicíos 04 Play audio e video HTML5 ans JS</mark></p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by
+                        <a style="color: red;" href="https://github.com/SergioFelzener/ARI/tree/master/ARI">GitHub
+                            Sergio Felzener ARI (Senac)</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    </div>
+    <script type="text/javascript" src="js/controller.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+        integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous">
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+        integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+        integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous">
+    </script>
 </body>
-<script>
 
-
-</script>
 </html>

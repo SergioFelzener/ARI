@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício Aula 07</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/damas.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Exercícios aula 07</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ml-5"> <a href="index.html">Voltar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <header>
+        <h1 id="tituloH1">Exercícios Aula 07</h1>
+    </header>
+    <main>
+        <section class="container">
+            <header>
+                <h2>Lista de Tarefas</h2>
+            </header>
+
+            <div class='margemTop'>
+                <input type="button" value="Tarefas" onclick="carregaLista()">
+            </div>
+
+            <div style="margin-bottom: 100px;" id="divTarefas" style="display:none;">
+
+                <!-- Colocar botões para edição -->
+                <ul style="margin-top: 10px;" id="tarefas" onkeyup="enviar(event)" onblur="enviar_direto()" contenteditable="true">
+
+                </ul>
+                <div>
+                    <p style="color: green;" id=status></p>
+                </div>
+            </div>
+
+            <div>
+                <input type="button" value="Negrito" onclick="execCommand('bold',false,'');">
+                <input type="button" value="Ítalico" onclick="execCommand('italic',false,'');">
+                <input type="button" value="Sublinhado" onclick="execCommand('underline',false,'');">
+            </div>
+
+            <div class='margemTop'>
+                <span>Change collor :</span>
+                <input type="color" name="cor" id="cor" oninput="mudarCor()">
+            </div>
+        </section>
+    </main>
+
+    <script>
+        function carregaLista() {
+            var div = document.getElementById("divTarefas");
+            div.style.display = "block";
+
+            // Carregar a lista via Ajax do arquivo "lista.html"
+            document.getElementById('tarefas').focus();
+            loadLista();
+        }
+
+        function loadLista() {
+            var ajax = new XMLHttpRequest();
+            ajax.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var selection = window.getSelection();
+                    var range = selection.getRangeAt(0);
+                    var contents = range.toString();
+                    document.execCommand('inserthtml', false, this.responseText);
+                }
+            };
+
+            ajax.open("GET", "lista.php", true);
+            ajax.send();
+        }
+
+
+        function mudarCor() {
+            const cor = document.getElementById('cor').value;
+
+            var selection = window.getSelection();
+            var range = selection.getRangeAt(0);
+            var contents = range.toString();
+            document.execCommand('foreColor', false, cor);
+
+        }
+
+        function enviar(event) {
+            if (event.keyCode == 13) {
+                enviar_direto();
+            }
+        }
+
+
+        function enviar_direto() {
+
+            var conteudo = document.getElementById('tarefas').innerHTML.replace(/(\r\n|\n|\r)/gm, "");
+
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    document.getElementById('status').innerHTML = 'Sucesso';
+                }
+            };
+
+            xhttp.open("GET", "write.php?lista=" + conteudo, true);
+            xhttp.send();
+        }
+    </script>
+
+    <footer class="footer fixed-bottom">
+        <div>
+            <div>
+                <div>
+                    <h6>About</h6>
+                    <p><mark>Exercicío 07 (Drag and Drop)& Requisição Ajax + (carrinho) - HTML5 CSS and JS</mark></p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by
+                        <a style="color: white;" href="https://github.com/SergioFelzener/ARI/tree/master/ARI">GitHub
+                            Sergio Felzener ARI (Senac)</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

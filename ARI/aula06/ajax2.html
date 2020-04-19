@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício Ajax 02</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/damas.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Exercícios aula 06</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ml-5"> <a href="index.html">Voltar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <header>
+        <h1 id="tituloH1">Exercícios Aula 06 - AJAX 2</h1>
+    </header>
+    <main>
+        <section class="container">
+
+            <span>Selecione uma categoria</span>
+            <select id="categorias" onchange="categorias()">
+                <option value="Nat">Natação</option>
+                <option value="Fit">Fitness</option>
+                <option value="Cic">Ciclismo</option>
+            </select>
+
+            <div id='listagem'>
+                <ul id='itens' class="navbar-nav mr-auto">
+                    <li>Produtos</li>
+                </ul>
+            </div>
+
+        </section>
+    </main>
+    <script>
+        
+        function categorias() {
+
+            var categorias = document.getElementById('categorias').value;
+            var div = document.getElementById('listagem');
+            var itens = document.getElementById('itens');
+           
+
+            if (div.childElementCount > 0) {
+                div.removeChild(itens);
+
+                var itens = document.createElement('ul');
+                itens.id = 'itens';
+                div.appendChild(itens);
+            }
+
+
+            requisicaoAjax(categorias);
+        }
+
+
+        function requisicaoAjax(categorias) {
+            var ajax = new XMLHttpRequest();
+            ajax.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var resposta = JSON.parse(this.responseText);
+
+                    for (i = 0; i < resposta.length; i++) {
+                        var linha = document.createElement('li');
+                        linha.innerHTML = resposta[i];
+
+                        itens.appendChild(linha);
+                    }
+                }
+            };
+
+            ajax.open("GET", "categorias.php?categorias" + categorias, true);
+            ajax.send();
+        }
+    </script>
+    <footer class="footer fixed-bottom">
+        <div>
+            <div>
+                <div>
+                    <h6>About</h6>
+                    <p><mark>Exercicíos 06 Requisição Ajax 01 - HTML5 CSS and JS</mark></p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by
+                        <a style="color: white;" href="https://github.com/SergioFelzener/ARI/tree/master/ARI">GitHub
+                            Sergio Felzener ARI (Senac)</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

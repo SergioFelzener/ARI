@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício Ajax 02</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/damas.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Exercícios aula 06 AJAX 02</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ml-5"> <a href="index.html">Voltar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <header>
+        <h1 id="tituloH1">Exercícios Aula 06 - AJAX 02</h1>
+        <div style="margin-right: 200px;" class="float-right">
+           <a href="carrinho.html"><img id="carrinho" height="100px" src="img/cart.jpeg" ondrop="drop(event)" ondragover="allowDrop(event)"/></a>
+            <p>Produtos no carrinho: <span id="qtd">0</span></p>
+        </div>
+
+    </header>
+    <main>
+        <section class="container">
+            <div class="row">
+                <div class="produto">
+                    <div class="prodimg">
+                        <img id="maca" class="img" src="img/maca.jpeg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <p>Maçã</p>
+                    <p>R$ 12,00</p>
+                </div>
+
+                <div class="produto">
+                    <div class="prodimg">
+                        <img id="pera" class="img" src="img/pera.png" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <p>Pera</p>
+                    <p>R$ 7,00</p>
+                </div>
+
+                <div class="produto">
+                    <div class="prodimg">
+                        <img id="banana" class="img" src="img/banana.jpg" draggable="true" ondragstart="drag(event)" />
+                    </div>
+                    <p>Banana</p>
+                    <p>R$4,00</p>
+                </div>
+
+                <div class="produto">
+                    <div class="prodimg">
+                        <img id="morango" class="img" src="img/morango.jpeg" draggable="true"
+                            ondragstart="drag(event)" />
+                    </div>
+                    <p>Morango</p>
+                    <p>R$ 22,00</p>
+                </div>
+            </div>
+
+        </section>
+    </main>
+
+    <script>
+        var id_produto_atual = '';
+
+        function drag(event) {
+            event.dataTransfer.setData("text", event.target.id);
+            id_produto_atual = event.target.id;
+        }
+
+        function allowDrop(event) {
+            event.preventDefault();
+        }
+
+        function drop(event) {
+            event.preventDefault();
+
+            loadDoc(id_produto_atual);
+        }
+
+
+        function loadDoc(produto) {
+            var ajax = new XMLHttpRequest();
+            ajax.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200) {
+                    var resposta = this.responseText;
+
+                    if (resposta == 'ok') {
+                        var qtdcar = document.getElementById('qtd');
+
+                        var qtdSoma = parseInt(qtdcar.innerHTML);
+                        qtdSoma = qtdSoma + 1;
+                        qtdcar.innerHTML = qtdSoma;
+                    } else {
+                        alert('error');
+                    }
+                }
+            };
+
+            ajax.open("GET", "retorno.php?ProdutoID=" + produto, true);
+            ajax.send();
+        }
+    </script>
+    <footer class="footer fixed-bottom">
+        <div>
+            <div>
+                <div>
+                    <h6>About</h6>
+                    <p><mark>Exercicíos 06 Requisição Ajax 02 - HTML5 CSS and JS</mark></p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by
+                        <a style="color: white;" href="https://github.com/SergioFelzener/ARI/tree/master/ARI">GitHub
+                            Sergio Felzener ARI (Senac)</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

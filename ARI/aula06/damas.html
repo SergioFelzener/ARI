@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Damas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/damas.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Exercícios aula 05 -> </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active ml-2"> <a href="hashgame.html">Jogo da Velha</a></li>
+                <li class="nav-item ml-2"> <a href="damas.html">Damas</a></li>
+                <li class="nav-item ml-2"> <a href="#">Xadrez</a></li>
+                <li class="nav-item ml-5"> <a href="index.html">Voltar Exercício 04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <header>
+        <h1 id="tituloH1">Exercícios Aula 05 - DAMAS</h1>
+        <p style="text-align: center;">DAMAS - Drag and Drop</p>
+    </header>
+    <section class="container">
+        <div class="row d-flex justify-content-center mb-3">
+            <h3>Descarte suas peças aqui </h3>
+            <div id="descarte" ondrop="dropExclude(event)" ondragover="activeDrop(event)">
+
+            </div>
+            <table id="board" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td id="A8"></td>
+
+                    <td id="B8_" ondrop="drop(event)" ondragover="activeDrop(event)">
+                        <img src="img/d1.png" width="60px" id="dama1" draggable="true" ondragstart="drag(event)" />
+                    </td>
+
+                    <td id="C8"></td>
+
+                    <td id="D8_" ondrop="drop(event)" ondragover="activeDrop(event)">
+                        <img src="img/d1.png" width="60px" id="dama" draggable="true" ondragstart="drag(event)" />
+                    </td>
+
+                    <td id="E8"></td>
+
+                    <td id="F8_" ondrop="drop(event)" ondragover="activeDrop(event)">
+                        <img src="img/d1.png" width="60px" id="dama3" draggable="true" ondragstart="drag(event)" />
+                    </td>
+
+                    <td id="G8"></td>
+
+                    <td id="H8_" ondrop="drop(event)" ondragover="activeDrop(event)">
+                        <img src="img/d1.png" width="60px" id="dama4" draggable="true" ondragstart="drag(event)" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td id="A7_" ondrop="drop(event)" ondragover="activeDrop(event)">
+                        <img src="img/d1.png" width="60px" id="dama5" draggable="true" ondragstart="drag(event)" />
+                    </td>
+
+                    <td id="B7"></td>
+
+                    <td id="C7_" ondrop="drop(event)" ondragover="activeDrop(event)">
+                        <img src="img/d1.png" width="60px" id="dama6" draggable="true" ondragstart="drag(event)" />
+                    </td>
+
+                    <td id="D7"></td>
+
+                    <td id="E7_" ondrop="drop(event)" ondragover="activeDrop(event)">
+                        <img src="img/d1.png" width="60px" id="dama7" draggable="true" ondragstart="drag(event)" />
+                    </td>
+
+                    <td id="F7"></td>
+
+                    <td id="G7_" ondrop="drop(event)" ondragover="activeDrop(event)">
+                        <img src="img/d1.png" width="60px" id="dama8" draggable="true" ondragstart="drag(event)" />
+                    </td>
+
+                    <td id="H7"></td>
+
+                </tr>
+
+                <tr>
+                    <td id="A6"></td>
+
+                    <td id="B6_" ondrop="drop(event)" ondragover="activeDrop(event)">
+                        <img src="img/d1.png" width="60px" id="dama9" draggable="true" ondragstart="drag(event)" />
+                    </td>
+
+                    <td id="C6"></td>
+
+                    <td id="D6_" ondrop="drop(event)" ondragover="activeDrop(event)">
+                        <img src="img/d1.png" width="60px" id="dama10" draggable="true" ondragstart="drag(event)" />
+                    </td>
+
+                    <td id="E6"></td>
+
+                    <td id="F6_" ondrop="drop(event)" ondragover="activeDrop(event)">
+                        <img src="img/d1.png" width="60px" id="dama11" draggable="true" ondragstart="drag(event)" />
+                    </td>
+
+                    <td id="G6"></td>
+
+                    <td id="H6_" ondrop="drop(event)" ondragover="activeDrop(event)">
+                        <img src="img/d1.png" width="60px" id="dama12" draggable="true" ondragstart="drag(event)" />
+                    </td>
+                </tr>
+
+                <tr>
+                    <td id="A5_" ondrop="drop(event)" ondragover="activeDrop(event)"></td>
+                    <td id="B5"></td>
+                    <td id="C5_" ondrop="drop(event)" ondragover="activeDrop(event)"></td>
+                    <td id="D5"></td>
+                    <td id="E5_" ondrop="drop(event)" ondragover="activeDrop(event)"></td>
+                    <td id="F5"></td>
+                    <td id="G5_" ondrop="drop(event)" ondragover="activeDrop(event)"></td>
+                    <td id="H5"></td>
+                </tr>
+
+                <tr>
+                    <td id="A4"></td>
+                    <td id="B4_" ondrop="drop(event)" ondragover="activeDrop(event)"></td>
+                    <td id="C4"></td>
+                    <td id="D4_" ondrop="drop(event)" ondragover="activeDrop(event)"></td>
+                    <td id="E4"></td>
+                    <td id="F4_" ondrop="drop(event)" ondragover="activeDrop(event)"></td>
+                    <td id="G4"></td>
+                    <td id="H4_" ondrop="drop(event)" ondragover="activeDrop(event)"></td>
+                </tr>
+
+                <tr>
+                    <td id="A3_" ondrop="drop(event)" ondragover="activeDrop(event)">
+                        <img src="img/d2.png" width="60px" id="dama13" draggable="true" ondragstart="drag(event)" />
+                    </td>
+
+                    <td id="B3"></td>
+
+                    <td id="C3_" ondrop="drop(event)" ondragover="activeDrop(event)">
+                        <img src="img/d2.png" width="60px" id="dama14" draggable="true" ondragstart="drag(event)" />
+                    </td>
+
+                    <td id="D3"></td>
+
+                    <td id="E3_" ondrop="drop(event)" ondragover="activeDrop(event)">
+                        <img src="img/d2.png" width="60px" id="dama15" draggable="true" ondragstart="drag(event)" />
+                    </td>
+
+                    <td id="F3"></td>
+
+                    <td id="G3_" ondrop="drop(event)" ondragover="activeDrop(event)">
+                        <img src="img/d2.png" width="60px" id="dama16" draggable="true" ondragstart="drag(event)" />
+                    </td>
+
+                    <td id="H3"></td>
+                </tr>
+
+                <tr>
+                    <td id="A2"></td>
+
+                    <td id="B2_" ondrop="drop(event)" ondragover="activeDrop(event)">
+                        <img src="img/d2.png" width="60px" id="dama17" draggable="true" ondragstart="drag(event)" />
+                    </td>
+
+                    <td id="C2"></td>
+
+                    <td id="D2_" ondrop="drop(event)" ondragover="activeDrop(event)">
+                        <img src="img/d2.png" width="60px" id="dama18" draggable="true" ondragstart="drag(event)" />
+                    </td>
+
+                    <td id="E2"></td>
+
+                    <td id="F2_" ondrop="drop(event)" ondragover="activeDrop(event)">
+                        <img src="img/d2.png" width="60px" id="dama19" draggable="true" ondragstart="drag(event)" />
+                    </td>
+
+                    <td id="G2"></td>
+
+                    <td id="H2_" ondrop="drop(event)" ondragover="activeDrop(event)">
+                        <img src="img/d2.png" width="60px" id="dama20" draggable="true" ondragstart="drag(event)" />
+                    </td>
+                </tr>
+
+                <tr>
+
+                    <td id="A1_" ondrop="drop(event)" ondragover="activeDrop(event)">
+                        <img src="img/d2.png" width="60px" id="dama21" draggable="true" ondragstart="drag(event)" />
+                    </td>
+
+                    <td id="B1"></td>
+
+                    <td id="C1_" ondrop="drop(event)" ondragover="activeDrop(event)">
+                        <img src="img/d2.png" width="60px" id="dama22" draggable="true" ondragstart="drag(event)" />
+                    </td>
+
+                    <td id="D1"></td>
+
+                    <td id="E1_" ondrop="drop(event)" ondragover="activeDrop(event)">
+                        <img src="img/d2.png" width="60px" id="dama23" draggable="true" ondragstart="drag(event)" />
+                    </td>
+
+                    <td id="F1"></td>
+
+                    <td id="G1_" ondrop="drop(event)" ondragover="activeDrop(event)">
+                        <img src="img/d2.png" width="60px" id="dama24" draggable="true" ondragstart="drag(event)" />
+                    </td>
+
+                    <td id="H1"></td>
+                </tr>
+            </table>
+
+
+        </div>
+    </section>
+
+    <footer class="footer fixed-bottom">
+        <div>
+            <div>
+                <div>
+                    <h6>About</h6>
+                    <p><mark>Exercicíos 05 DAMAS - HTML5 CSS and JS</mark></p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by
+                        <a style="color: red;"  href="https://github.com/SergioFelzener/ARI/tree/master/ARI">GitHub Sergio Felzener ARI (Senac)</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="js/damas.js"></script>
+</body>
+
+</html>
