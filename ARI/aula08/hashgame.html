@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hash Game</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/hash.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Exercícios aula 05 -> </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active ml-2"> <a href="hashgame.html">Jogo da Velha</a></li>
+                <li class="nav-item ml-2"> <a href="damas.html">Damas</a></li>
+                <li class="nav-item ml-2"> <a href="#">Xadrez</a></li>
+                <li class="nav-item ml-5"> <a href="index.html">Voltar Exercício 04</a></li>
+            </ul>
+        </nav>
+    </header>
+    <header>
+        <h1 id="tituloH1">Exercícios Aula 05 - HASH GAME</h1>
+        <p style="text-align: center;">Hash Game - Drag and Drop</p>
+    </header>
+    <section class="container">
+        <div class="row d-flex justify-content-center mb-3">
+            <div style=" right: 0;">
+                <img id="o" ondragstart="dStart(event)" draggable="true" style="width: 50px; margin-right: 20px;"
+                    src="img/o.png">
+                <img id="x" ondragstart="dStart(event)" draggable="true" style="width: 50px;" src="img/x.png">
+            </div>
+        </div>
+        <div class="row d-flex justify-content-center">
+            <table id="board" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td ondragover="dropIsAllowed()" ondrop="drop(event)" id="A3"></td>
+                    <td ondragover="dropIsAllowed()" ondrop="drop(event)" id="B3"></td>
+                    <td ondragover="dropIsAllowed()" ondrop="drop(event)" id="C3"></td>
+                </tr>
+                <tr>
+                    <td ondragover="dropIsAllowed()" ondrop="drop(event)" id="A2"></td>
+                    <td ondragover="dropIsAllowed()" ondrop="drop(event)" id="B2"></td>
+                    <td ondragover="dropIsAllowed()" ondrop="drop(event)" id="C2"></td>
+                </tr>
+                <tr>
+                    <td ondragover="dropIsAllowed()" ondrop="drop(event)" id="A1"></td>
+                    <td ondragover="dropIsAllowed()" ondrop="drop(event)" id="B1"></td>
+                    <td ondragover="dropIsAllowed()" ondrop="drop(event)" id="C1"></td>
+                </tr>
+            </table>
+        </div>
+    </section>
+    <footer class="footer fixed-bottom">
+        <div>
+            <div>
+                <div>
+                    <h6>About</h6>
+                    <p><mark>Exercicíos 05 HASH GAME - HTML5 CSS and JS</mark></p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by
+                        <a style="color: red;" href="https://github.com/SergioFelzener/ARI/tree/master/ARI">GitHub Sergio Felzener ARI (Senac)</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="js/HashGame.js"></script>
+</body>
+
+</html>

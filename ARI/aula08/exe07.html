@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Exercício Aula 07</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/damas.css">
+</head>
+
+<body>
+    <header>
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Exercícios aula 07</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item ml-5"> <a href="index.html">Voltar</a></li>
+            </ul>
+        </nav>
+    </header>
+    <header>
+        <h1 id="tituloH1">Exercícios Aula 07</h1>
+    </header>
+    <main>
+        <section class="container">
+            <header>
+                <h2>Meus Compromissos</h2>
+            </header>
+
+            <div style="margin-bottom: 100px;" id="content" style="display:none;">
+
+                <ul style="margin-top: 10px;" id="agenda" onkeyup="enviar(event)" onblur="send()" contenteditable="true">
+
+                </ul>
+                <div>
+                    <input type="button" class="btn btn-sm btn-success" value="Novo" onclick="load()">
+                    <p style="color: rgb(236, 30, 30);" class="float-right mr-2" id=response></p>
+                </div>
+            </div>
+
+            <div>
+                <input type="button" class="btn btn-sm btn-primary" value="Negrito" onclick="execCommand('bold',false,'');">
+                <input type="button" class="btn btn-sm btn-primary" value="Ítalico" onclick="execCommand('italic',false,'');">
+                <input type="button" class="btn btn-sm btn-primary" value="Sublinhado" onclick="execCommand('underline',false,'');">
+                <span>Collor</span>
+                <input type="color" name="cor" id="cor" oninput="mudarCor()">
+            </div>
+        </section>
+    </main>
+    <footer class="footer fixed-bottom">
+        <div>
+            <div>
+                <div>
+                    <h6>About</h6>
+                    <p><mark>Exercicío 07 (Drag and Drop)& Requisição Ajax - HTML5 CSS and JS</mark></p>
+                </div>
+            </div>
+        </div>
+        </div>
+        <div>
+            <div>
+                <div>
+                    <p class="copyright-text">Copyright &copy; 2020 All Rights Reserved by
+                        <a style="color: white;" href="https://github.com/SergioFelzener/ARI/tree/master/ARI">GitHub
+                            Sergio Felzener ARI (Senac)</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="js/exe07.js"></script>
+</body>
+
+</html>
