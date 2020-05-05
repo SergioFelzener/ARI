@@ -1,0 +1,85 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>CSS</title>
+
+    <style>
+        a[href="/home"] {
+            background: #2D2D66;
+            color: #fff;
+        }
+        a[href$="pdf"] {
+            background: #2D662D;
+            color: #fff;
+        }
+        a[href^="http"] {
+            background: #662D2D;
+            color: #fff;
+        }
+        [id$="-table"] {
+            background: #ffff00;
+        }
+        tr [id$="-table"] {
+            color: #ff0000;
+        }
+        [class*="-teste-"] {
+            background: #00ffff;
+        }
+        table, th, td {
+            border: solid 1px;
+        }
+    </style>
+
+    <header>
+        <h1>Header</h1>
+        <nav>
+            <ul>
+                <li><a href="/home">Item 1</a></li>
+                <li><a href="#item2">Item 2</a></li>
+                <li><a href="teste.pdf">Item 3</a></li>
+                <li><a href="#item4">Item 4</a></li>
+                <li><a href="#item4">Item 5</a></li>
+                <li><a href="#item4">Item 6</a></li>
+                <li><a href="http://www.google.com">Item 7</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div>
+        <h1>Tabela</h1>
+        <table>
+            <thead>
+                <tr>
+                    <th>Col 1</th>
+                    <th>Col 2</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="td1-table">TD 1</td>
+                    <td>TD 2</td>
+                </tr>
+                <tr id="tr2-table">
+                    <td>TD 3</td>
+                    <td>TD 4</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <article>
+        <h1 class="article-teste-1">Article</h1>
+        <p>Paragraph 1</p>
+        <p>Paragraph 2</p>
+        <section>
+            <h1>Section 1</h1>
+            <p class="paragrafo-teste-2">Paragraph 1 - Section 1</p>
+            <p>Paragraph 2 - Section 1</p>
+        </section>
+        <section>
+            <h1>Section 2</h1>
+            <p>Paragraph 1 - Section 2</p>
+            <p class="paragrafo-teste-3">Paragraph 2 - Section 2</p>
+        </section>
+        <footer>Article footer</footer>
+    </article>
+    <footer>
+        Body footer
+    </footer>

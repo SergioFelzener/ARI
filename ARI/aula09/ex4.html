@@ -1,0 +1,31 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>Content Editable</title>
+
+    <input type="button" onclick="execCommand('bold',false,'');" value="B">
+    <input type="button" onclick="execCommand('italic',false,'');" value="I">
+    <input type="button" onclick="execCommand('underline',false,'');" value="U">
+    <input type="button" onclick="execCommand('fontName',false,'Arial');" value="Arial">
+	<input type="button" onclick="execCommand('fontSize',false,'7');" value="Grande">
+    <input type="button" onclick="execCommand('foreColor',false,'#ff0000');" value="Vermelho">
+    <input type="button" onclick="execCommand('formatblock',false,'<H3>');" value="H3">
+    <input type="button" onclick="execCommand('indent',false,'');" value="->">
+    <input type="button" onclick="execCommand('outdent',false,'');" value="<-">
+    <input type="button" onclick="createSection();" value="section">
+    
+    <p contenteditable="true">Parágrafo editável</p>
+    <ul contenteditable="true">
+        <li>Item 1</li>
+        <li>Item 2</li>
+    </ul>
+	
+    <script>
+        function createSection() {
+            var selection = window.getSelection();
+            var range = selection.getRangeAt(0);
+            var contents = range.toString();
+            document.execCommand('inserthtml',false,'<section>' +
+                contents + '</section>');
+        }
+
+    </script>
