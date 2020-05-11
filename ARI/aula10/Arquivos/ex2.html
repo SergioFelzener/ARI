@@ -1,0 +1,17 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>Geolocalização</title>
+
+    <script>
+        function carregar() {
+            navigator.geolocation.getCurrentPosition(function(position){
+                var latitude = position.coords.latitude;
+                var longitude = position.coords.longitude;
+                var mapa = document.getElementById("mapa");
+                mapa.src = "http://maps.google.com/maps/api/staticmap?center=" + latitude + "," + longitude + "&zoom=14&size=440x440&maptype=roadmap&markers=color:red|color:red|label:a|" + latitude + "," + longitude + "&sensor=false&key=AIzaSyCh5rzxfuBPGlU5w_fGZmZbIgl8nAVtCwc";
+            });
+        }
+    </script>
+
+    <a href="#" onclick="carregar();">Carregar localização</a> <br/>
+    <img id="mapa" src=""/>
