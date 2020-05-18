@@ -1,0 +1,21 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>Canvas</title>
+
+    <script>
+        function desenhar() {
+            var canvas = document.getElementById('meucanvas');
+            var ctx = canvas.getContext('2d');
+            
+            var lineargradient = ctx.createLinearGradient(20,20,220,220);
+            lineargradient.addColorStop(0,'rgb(127,127,127)');
+            lineargradient.addColorStop(0.5,'rgb(255,255,255)');
+            lineargradient.addColorStop(1,'rgb(127,127,127)');
+            
+            ctx.fillStyle = lineargradient;
+            ctx.fillRect(20,20,200,200);
+        }
+    </script>
+    
+    <input type="button" value="Desenhar" onclick="desenhar()">
+    <canvas id="meucanvas" width="320" height="240" style="outline: 1px solid #999;">

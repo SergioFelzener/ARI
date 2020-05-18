@@ -1,0 +1,17 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>Canvas</title>
+
+    <script>
+        var img = document.createElement('img');
+        img.src = "paisagem.jpg";
+        
+        function desenhar() {    
+            var canvas = document.getElementById('meucanvas');
+            var ctx = canvas.getContext('2d');
+            ctx.drawImage(img, 10, 10, 118, 130);
+        }
+    </script>
+    
+    <input type="button" value="Desenhar" onclick="desenhar()">
+    <canvas id="meucanvas" width="320" height="240" style="outline: 1px solid #999;">

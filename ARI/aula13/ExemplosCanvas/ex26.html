@@ -1,0 +1,24 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>css</title>
+    <style>
+        @keyframes movimento {
+            from { top: 50px; }
+            25% { top: 350px; }
+            50% { top: 50px; }
+            75% { top: 350px; }
+            to { top: 50px; }
+        }
+        
+        div {
+            position: absolute;
+            border: 2px solid #444;
+            width: 200px;
+            padding: 10px;
+            animation-duration: 3s;
+            animation-name: movimento;
+            animation-iteration-count: infinite;
+        }
+    </style>
+    
+    <div>Div de exemplo</div>

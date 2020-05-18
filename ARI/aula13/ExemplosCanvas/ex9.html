@@ -1,0 +1,25 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>Canvas</title>
+
+    <script>
+        function desenhar() {
+            var canvas = document.getElementById('meucanvas');
+            var ctx = canvas.getContext('2d');
+            
+            ctx.shadowOffsetX = 4;
+            ctx.shadowOffsetY = 2;
+            ctx.shadowBlur = 5;
+            ctx.shadowColor = 'rgba(0, 0, 0, 0.9)';
+            
+            ctx.fillStyle = 'rgb(255,0,0)';
+            ctx.fillRect(20,20,200,200);
+            
+            ctx.strokeStyle = 'rgb(0,0,0)';
+            ctx.strokeText('WRITIN YR TXT',170,90);
+            
+        }
+    </script>
+    
+    <input type="button" value="Desenhar" onclick="desenhar()">
+    <canvas id="meucanvas" width="320" height="240" style="outline: 1px solid #999;">

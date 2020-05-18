@@ -1,0 +1,21 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>Canvas</title>
+
+    <script>
+        function desenhar() {
+            var canvas = document.getElementById('meucanvas');
+            var ctx = canvas.getContext('2d');
+            ctx.beginPath();
+            ctx.moveTo(265,50);
+            ctx.quadraticCurveTo(315,50,315,150);
+            //ctx.quadraticCurveTo(265,50,215,150);
+            //ctx.quadraticCurveTo(215,0,265,50);
+            ctx.strokeStyle = 'rgb(51,51,51)';
+            ctx.stroke();
+            //ctx.fill();
+        }
+    </script>
+    
+    <input type="button" value="Desenhar" onclick="desenhar()">
+    <canvas id="meucanvas" width="320" height="240" style="outline: 1px solid #999;">

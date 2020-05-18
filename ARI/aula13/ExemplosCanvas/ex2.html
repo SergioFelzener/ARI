@@ -1,0 +1,16 @@
+<!doctype html>
+<meta charset=utf-8>
+<title>Canvas</title>
+
+    <script>
+        function desenhar() {
+            var canvas = document.getElementById('meucanvas');
+            var ctx = canvas.getContext('2d');
+            ctx.fillStyle = 'rgb(0,255,0)';
+            ctx.arc(200, 100, 50, 0, Math.PI*2, false);
+            ctx.fill();
+        }
+    </script>
+    
+    <input type="button" value="Desenhar" onclick="desenhar()">
+    <canvas id="meucanvas" width="320" height="240" style="outline: 1px solid #999;">
